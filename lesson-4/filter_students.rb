@@ -32,5 +32,3 @@ def filter_students(input_path, output_path)
 
   output.close
 end
-
-filter_students Paths::INPUT_PATH, Paths::RESULT_PATH

@@ -4,7 +4,7 @@ require './custom_file.rb'
 
 RSpec.describe 'CustomFile' do
 
-  let(:file) { CustomFile.new(Paths::FILE_PATH, 'w+') }
+  let(:file) { CustomFile.new(Paths::FILE_TEST_PATH, 'w+') }
 
   before {
     file.add_to_end('Line 1')
@@ -14,7 +14,7 @@ RSpec.describe 'CustomFile' do
 
   after {
     file.close
-    File.delete(Paths::FILE_PATH) if File.exist?(Paths::FILE_PATH)
+    File.delete(Paths::FILE_TEST_PATH) if File.exist?(Paths::FILE_TEST_PATH)
   }
 
   it 'Добавляет строку в конец файла' do

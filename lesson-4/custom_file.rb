@@ -1,4 +1,4 @@
-require './paths.rb'
+require_relative '../lesson-4/paths.rb'
 
 # Предоставляет дополнительные методы над файлом
 class CustomFile < File
@@ -66,10 +66,3 @@ class CustomFile < File
     File.delete(Paths::BUFFER_PATH) if File.exist?(Paths::BUFFER_PATH)
   end
 end
-
-f = CustomFile.new(Paths::FILE_PATH, 'w+')
-f.add_to_end('1')
-f.add_to_end('2')
-f.add_to_end('3')
-f.index
-f.where('2')
